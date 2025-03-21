@@ -1,12 +1,4 @@
 public class MaturitkaRekurze {
-
-    public static void main(String args[]) {
-        int x_value = 4;
-        int n_value = 6;
-
-        System.out.println(legendr(n_value, x_value));
-    }
-
     public static float legendr(int n_value, int x_value) {
         float legender_value;
         if (n_value == 0){

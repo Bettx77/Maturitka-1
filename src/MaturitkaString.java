@@ -1,6 +1,8 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MaturitkaString {
 
@@ -14,6 +16,18 @@ public class MaturitkaString {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static void matchWords(String line) throws IOException {
+        String pattern = "\\b[A-Z]\\w*";
+        Pattern p = Pattern.compile(pattern);
+        Matcher m = p.matcher(line);
+
+        while (m.find()) {
+            if (m.group() != null) {
+                System.out.print(m.group() + " ");
+            }
+        }
     }
 }
 

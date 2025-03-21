@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String filePath = "C:\\Users\\betty\\Documents\\GitHub\\Maturitka 1\\src\\input.txt";
 
         ArrayList<int[]> poles = new ArrayList<>();
@@ -42,19 +42,7 @@ public class Main {
         // System.out.println(Arrays.toString(arrayString));
         System.out.println();
 
-        // rozdeleni na dvojite pole
-        String regex = "[A-Z]";
-        Pattern pattern = Pattern.compile(regex);
-
-        for (int i = 0; i < arrayString.length; i++) {
-            String[] arrayWord = arrayString[i].split("");
-
-            Matcher matcher = pattern.matcher(arrayWord[0]);
-            if (matcher.matches()) {
-                System.out.print(arrayString[i] + " ");
-            }
-        }
-
+        MaturitkaString.matchWords(rawString);
 
         // nejdelší String
         int maxLenght = 0;
@@ -63,6 +51,12 @@ public class Main {
                 maxLenght = word.length();
             }
         }
-        System.out.println(maxLenght);
+        System.out.println("\n" + maxLenght);
+
+        // ukol 3
+        int x_value = 4;
+        int n_value = 6;
+
+        System.out.println(MaturitkaRekurze.legendr(n_value, x_value));
     }
 }
